@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome back, Alex — NovaStar Hotels</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23D4A843'/%3E%3Cpath d='M8 24V14l8-6 8 6v10h-5v-7h-6v7H8z' fill='%230F1A30'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0F1A30;
+  --navy-light:#1B2A4A;
+  --navy-med:#2C3E6B;
+  --gold:#D4A843;
+  --gold-light:#E8C86A;
+  --cream:#F5F0EB;
+  --cream-dark:#E8DFD5;
+  --text:#1A1A2E;
+  --text-light:#6B7280;
+  --text-muted:#9CA3AF;
+  --white:#FFFFFF;
+  --shadow-sm:0 2px 8px rgba(15,26,48,0.06);
+  --shadow:0 4px 24px rgba(15,26,48,0.08);
+  --shadow-lg:0 12px 48px rgba(15,26,48,0.12);
+  --radius:16px;
+  --radius-sm:10px;
+  --radius-xs:6px;
+  --font:'Inter',-apple-system,sans-serif;
+  --font-serif:'Playfair Display',Georgia,serif;
+}
+body{font-family:var(--font);background:var(--cream);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ─── Top Bar ─── */
+.top-bar{background:var(--navy);color:rgba(255,255,255,0.5);font-size:12px;padding:6px 24px;text-align:center;letter-spacing:0.3px}
+.top-bar strong{color:var(--white);font-weight:600}
+
+/* ─── Header ─── */
+header{background:var(--white);border-bottom:1px solid var(--cream-dark);padding:0 24px;position:sticky;top:0;z-index:50}
+.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:var(--navy);letter-spacing:-0.3px;text-decoration:none}
+.logo svg{flex-shrink:0}
+.logo span{color:var(--gold)}
+.logo small{font-weight:400;font-size:11px;opacity:0.5;letter-spacing:0;margin-left:4px}
+.header-inner .tagline{font-size:13px;color:var(--text-muted)}
+
+/* ─── Hero ─── */
+#hero{background:var(--navy);padding:0 24px;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A843' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;opacity:0.5}
+.hero-inner{max-width:960px;margin:0 auto;padding:72px 0 64px;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,168,67,0.12);border:1px solid rgba(212,168,67,0.2);padding:5px 14px 5px 10px;border-radius:100px;font-size:12px;color:var(--gold-light);margin-bottom:28px}
+.hero-badge .dot{width:7px;height:7px;background:#22C55E;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.25}}
+.hero-inner h1{font-size:44px;font-weight:800;letter-spacing:-1.5px;line-height:1.1;color:var(--white);margin-bottom:8px}
+.hero-inner h1 em{font-style:normal;color:var(--gold)}
+.hero-inner h1 .handwrite{font-family:var(--font-serif);font-weight:500;font-style:italic;color:var(--gold-light)}
+.hero-inner .sub{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;max-width:540px;margin:16px 0 0}
+.stay-summary{display:flex;gap:24px;margin-top:32px;flex-wrap:wrap}
+.stay-summary span{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.5)}
+.stay-summary span strong{color:var(--white);font-weight:600}
+
+/* ─── Personal Note ─── */
+#note{background:var(--white);padding:56px 24px;border-bottom:1px solid var(--cream-dark)}
+.note-inner{max-width:960px;margin:0 auto}
+.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.note-text .label{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:12px}
+.note-text h2{font-size:32px;font-weight:800;letter-spacing:-0.8px;line-height:1.2;margin-bottom:16px}
+.note-text p{font-size:16px;color:var(--text-light);line-height:1.8;margin-bottom:12px}
+.remember-list{list-style:none;margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.remember-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);padding:10px 14px;background:var(--cream);border-radius:var(--radius-xs)}
+.remember-list li .icon{font-size:18px;flex-shrink:0}
+.note-visual{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--radius);padding:36px;color:var(--white);position:relative;overflow:hidden}
+.note-visual::before{content:'"';position:absolute;top:-20px;left:10px;font-size:120px;color:rgba(212,168,67,0.1);font-family:var(--font-serif);line-height:1}
+.note-visual .quote{font-size:18px;line-height:1.8;font-style:italic;position:relative;z-index:1}
+.note-visual .quote-author{font-size:14px;color:var(--gold);margin-top:16px;font-style:normal;font-weight:600}
+.note-visual .quote-title{font-size:12px;color:rgba(255,255,255,0.4);margin-top:2px}
+
+/* ─── Offer ─── */
+#offer{background:var(--cream);padding:64px 24px}
+.offer-inner{max-width:960px;margin:0 auto;text-align:center}
+.offer-inner .label{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:12px}
+.offer-inner h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
+.offer-inner .sub{font-size:16px;color:var(--text-light);max-width:560px;margin:0 auto 36px}
+.offer-card{background:var(--white);border-radius:var(--radius);padding:40px 32px;box-shadow:var(--shadow-lg);max-width:640px;margin:0 auto;position:relative;overflow:hidden}
+.offer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.offer-card .offer-highlight{font-size:52px;font-weight:900;color:var(--navy);letter-spacing:-1.5px;line-height:1}
+.offer-card .offer-highlight span{color:var(--gold)}
+.offer-card .offer-desc{font-size:18px;color:var(--text-light);margin:12px 0 20px;line-height:1.6}
+.offer-benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;text-align:left}
+.offer-benefits .benefit{display:flex;align-items:center;gap:10px;font-size:14px;padding:10px 14px;background:var(--cream);border-radius:var(--radius-xs)}
+.offer-benefits .benefit .icon{font-size:16px;flex-shrink:0}
+.offer-expiry{font-size:13px;color:var(--text-muted);margin:16px 0 24px}
+.offer-expiry strong{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 36px;border-radius:var(--radius-sm);font-weight:700;font-size:16px;cursor:pointer;border:none;text-decoration:none;transition:all 0.25s;font-family:var(--font)}
+.btn-primary{background:var(--gold);color:var(--navy)}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 32px rgba(212,168,67,0.35)}
+.btn-secondary{background:transparent;color:var(--navy);border:2px solid var(--cream-dark)}
+.btn-secondary:hover{border-color:var(--gold);transform:translateY(-2px)}
+.btn-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn .small{font-size:12px;font-weight:400;opacity:0.7}
+
+/* ─── Experience Highlights ─── */
+#experience{background:var(--white);padding:64px 24px;border-top:1px solid var(--cream-dark)}
+.exp-inner{max-width:960px;margin:0 auto;text-align:center}
+.exp-inner .label{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:12px}
+.exp-inner h2{font-size:32px;font-weight:800;letter-spacing:-0.8px;margin-bottom:40px}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left}
+.exp-card{background:var(--cream);border-radius:var(--radius-sm);padding:24px;transition:all 0.3s}
+.exp-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.exp-card .exp-icon{font-size:32px;margin-bottom:12px}
+.exp-card h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.exp-card p{font-size:14px;color:var(--text-light);line-height:1.7}
+
+/* ─── Social Proof ─── */
+#social{background:var(--cream);padding:64px 24px}
+.social-inner{max-width:960px;margin:0 auto;text-align:center}
+.social-inner .label{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:12px}
+.social-inner h2{font-size:32px;font-weight:800;letter-spacing:-0.8px;margin-bottom:8px}
+.social-inner .sub{font-size:16px;color:var(--text-light);margin-bottom:36px}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left}
+.testimonial-card{background:var(--white);border-radius:var(--radius-sm);padding:24px;box-shadow:var(--shadow-sm);position:relative}
+.testimonial-card::before{content:'"';position:absolute;top:12px;right:20px;font-size:56px;color:var(--cream-dark);font-family:var(--font-serif);line-height:1}
+.testimonial-card .stars{color:var(--gold);font-size:16px;margin-bottom:8px;letter-spacing:2px}
+.testimonial-card blockquote{font-size:14px;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:12px;position:relative;z-index:1}
+.testimonial-card .author{font-size:13px;font-weight:600;color:var(--navy)}
+.testimonial-card .detail{font-size:12px;color:var(--text-muted)}
+
+/* ─── Loyalty ─── */
+#loyalty{background:linear-gradient(135deg,var(--navy),var(--navy-light));padding:64px 24px;color:var(--white)}
+.loyalty-inner{max-width:960px;margin:0 auto;text-align:center}
+.loyalty-inner .label{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:12px}
+.loyalty-inner h2{font-size:32px;font-weight:800;letter-spacing:-0.8px;margin-bottom:8px}
+.loyalty-inner .sub{font-size:16px;color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto 36px}
+.loyalty-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.loyalty-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-sm);padding:28px 20px;text-align:center;transition:all 0.3s}
+.loyalty-card:hover{background:rgba(255,255,255,0.07);transform:translateY(-3px)}
+.loyalty-card .tier-icon{font-size:36px;margin-bottom:10px}
+.loyalty-card h4{font-size:17px;font-weight:700;margin-bottom:6px}
+.loyalty-card p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.6}
+.loyalty-card .badge-tier{display:inline-block;background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;padding:2px 12px;border-radius:20px;margin-top:12px}
+
+/* ─── Feedback ─── */
+#feedback{background:var(--white);padding:64px 24px}
+.feedback-inner{max-width:640px;margin:0 auto;text-align:center}
+.feedback-inner .label{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:12px}
+.feedback-inner h2{font-size:28px;font-weight:800;letter-spacing:-0.6px;margin-bottom:8px}
+.feedback-inner .sub{font-size:15px;color:var(--text-light);margin-bottom:24px}
+.rating-group{display:flex;gap:8px;justify-content:center;margin-bottom:24px}
+.rating-group button{background:none;border:2px solid var(--cream-dark);border-radius:var(--radius-xs);padding:10px 16px;font-size:24px;cursor:pointer;transition:all 0.2s;font-family:var(--font)}
+.rating-group button:hover{border-color:var(--gold);background:rgba(212,168,67,0.06);transform:scale(1.05)}
+.rating-group button.selected{border-color:var(--gold);background:rgba(212,168,67,0.1)}
+.feedback-btn{background:var(--cream-dark);color:var(--text-light);border:none;padding:12px 32px;border-radius:var(--radius-sm);font-weight:600;font-size:15px;cursor:pointer;transition:all 0.2s;font-family:var(--font)}
+.feedback-btn:hover{background:var(--gold);color:var(--navy)}
+
+/* ─── Footer ─── */
+footer{background:var(--navy);color:rgba(255,255,255,0.25);padding:32px 24px;text-align:center;font-size:13px;line-height:1.8}
+footer a{color:var(--gold);text-decoration:none}
+footer .footer-links{display:flex;gap:20px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+footer .footer-links a{color:rgba(255,255,255,0.4);font-size:12px}
+footer .footer-links a:hover{color:var(--gold)}
+
+/* ─── Decorative ─── */
+.divider{width:40px;height:3px;background:var(--gold);border-radius:2px;margin:0 auto 20px}
+.text-gold{color:var(--gold)}
+
+/* ─── Responsive ─── */
+@media(max-width:768px){
+  .note-grid{grid-template-columns:1fr;gap:32px}
+  .remember-list{grid-template-columns:1fr}
+  .exp-grid{grid-template-columns:1fr}
+  .social-grid{grid-template-columns:1fr}
+  .loyalty-grid{grid-template-columns:1fr}
+  .offer-benefits{grid-template-columns:1fr}
+  .hero-inner h1{font-size:32px}
+  .offer-card .offer-highlight{font-size:40px}
+  .stay-summary{gap:12px;flex-direction:column}
+  .header-inner .tagline{display:none}
+  #hero{padding:0 16px}
+  .hero-inner{padding:48px 0}
+  section{padding:40px 16px}
+  .offer-card{padding:28px 20px}
+}
+@media(max-width:480px){
+  .hero-inner h1{font-size:26px}
+  .note-text h2{font-size:24px}
+  .offer-inner h2{font-size:26px}
+  .offer-card .offer-highlight{font-size:34px}
+  .btn-actions{flex-direction:column}
+  .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">NovaStar Hotels · Member ID: NS-ALX-412 · <strong>Exclusive offer expires June 15</strong></div>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+<div class="header-inner">
+  <a href="#" class="logo">
+    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="var(--gold)"/><path d="M8 24V14l8-6 8 6v10h-5v-7h-6v7H8z" fill="var(--navy)"/></svg>
+    NovaStar<span>Hotels</span><small>· EST. 2026</small>
+  </a>
+  <span class="tagline">Your stay, remembered.</span>
+</div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+<div class="hero-inner">
+  <div class="hero-badge"><span class="dot"></span> Welcome back, Alex</div>
+  <h1>Your room is <em>waiting</em>.<br>Just the way you <span class="handwrite">left it.</span></h1>
+  <p class="sub">Three days ago you checked out of Room 412. We haven't stopped thinking about your next visit.</p>
+  <div class="stay-summary">
+    <span>🗓️ <strong>3 nights</strong> · May 12–15, 2026</span>
+    <span>🛏️ <strong>Premium King Suite</strong> · Room 412</span>
+    <span>📍 <strong>NovaStar Downtown</strong> · San Francisco</span>
+  </div>
+</div>
+</section>
+
+<!-- ═══ PERSONAL NOTE ═══ -->
+<section id="note">
+<div class="note-inner">
+  <div class="note-grid">
+    <div class="note-text">
+      <span class="label">We Remember</span>
+      <h2>It's the little things<br>that make a stay <em>yours</em>.</h2>
+      <p>At NovaStar, we believe a great stay isn't just about the room — it's about how it makes you feel. Here's what we noticed about your last visit. Because you shouldn't have to remind us.</p>
+      <ul class="remember-list">
+        <li><span class="icon">🧖</span> Spa &amp; Wellness visit</li>
+        <li><span class="icon">🏋️</span> Morning gym session</li>
+        <li><span class="icon">🌆</span> Late checkout (3 PM)</li>
+        <li><span class="icon">🍷</span> Rooftop bar &amp; dining</li>
+        <li><span class="icon">🛏️</span> Premium King — quiet floor</li>
+        <li><span class="icon">☕</span> In-room espresso (3x)</li>
+      </ul>
+    </div>
+    <div class="note-visual">
+      <div class="quote">"The moment I walked into Room 412, I felt like the hotel already knew me. The quiet floor request, the extra espresso pods — they just knew. That's why I keep coming back."</div>
+      <div class="quote-author">— Alex Martinez</div>
+      <div class="quote-title">NovaStar Guest · 3 stays and counting</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ OFFER ═══ -->
+<section id="offer">
+<div class="offer-inner">
+  <span class="label">Exclusive Offer</span>
+  <h2>Come back on <em>your terms</em>.</h2>
+  <p class="sub">A personalized rate, reserved for the guest who appreciates the difference.</p>
+  <div class="offer-card">
+    <div class="offer-highlight">20% OFF <span>+</span> Premium Upgrade</div>
+    <p class="offer-desc">Book your next stay and we'll automatically upgrade you to a Premium King Suite — our quietest rooms, highest floor, best views. On us.</p>
+    <div class="offer-benefits">
+      <div class="benefit"><span class="icon">✅</span> Free room upgrade (value $120/night)</div>
+      <div class="benefit"><span class="icon">✅</span> Double loyalty points — 2,500 bonus</div>
+      <div class="benefit"><span class="icon">✅</span> Late checkout guaranteed until 4 PM</div>
+      <div class="benefit"><span class="icon">✅</span> Welcome amenity: Sparkling wine + fruit</div>
+    </div>
+    <div class="offer-expiry">🎯 Offer expires <strong>June 15, 2026</strong> · 6 days remaining</div>
+    <div class="btn-actions">
+      <a href="#" class="btn btn-primary">Book Your Suite <span class="small">· 2 min</span></a>
+      <a href="#" class="btn btn-secondary">View Dates</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ EXPERIENCE HIGHLIGHTS ═══ -->
+<section id="experience">
+<div class="exp-inner">
+  <span class="label">The NovaStar Difference</span>
+  <h2>What you loved about <em>your stay</em></h2>
+  <div class="divider"></div>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <div class="exp-icon">🏛️</div>
+      <h4>Premium Comfort</h4>
+      <p>Our Premium King Suites feature memory-foam mattresses, soundproof walls, and blackout curtains — designed for the deep sleep you mentioned at checkout.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-icon">🍽️</div>
+      <h4>Curated Dining</h4>
+      <p>You spent $340 on dining during your stay — including the rooftop bar's award-winning tasting menu. We've reserved the same corner table for your next visit.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-icon">🧘</div>
+      <h4>Wellness Access</h4>
+      <p>From the spa to the 24-hour gym, you made time for yourself. Your next stay includes complimentary access to our new sauna and recovery suite.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SOCIAL PROOF ═══ -->
+<section id="social">
+<div class="social-inner">
+  <span class="label">Trusted by Travelers</span>
+  <h2>Join <em>12,000+</em> returning guests</h2>
+  <p class="sub">Business travelers who found their home away from home.</p>
+  <div class="social-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>The AI concierge reached out three days after my stay with an offer that referenced exactly what I'd enjoyed. I've never had a hotel do that. I rebooked within the hour.</blockquote>
+      <div class="author">Sarah K.</div>
+      <div class="detail">NovaStar Loyalty Member · 4 stays</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>I travel 40 weeks a year for work. NovaStar is the only hotel that feels like it actually pays attention. The quiet floor request was remembered without me asking.</blockquote>
+      <div class="author">James R.</div>
+      <div class="detail">Business traveler · 12 nights this year</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>My first stay at NovaStar was great. What brought me back was the email that mentioned my favorite drink at the rooftop bar by name. That level of detail is unheard of.</blockquote>
+      <div class="author">Priya M.</div>
+      <div class="detail">NovaStar Loyalty Member · 6 stays</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ LOYALTY ═══ -->
+<section id="loyalty">
+<div class="loyalty-inner">
+  <span class="label">Loyalty Program</span>
+  <h2>Every stay <em>rewards</em> you.</h2>
+  <p class="sub">Join 12,000+ members who earn points, upgrades, and experiences with every visit. You're already pre-enrolled with 2,500 bonus points from your last stay.</p>
+  <div class="loyalty-grid">
+    <div class="loyalty-card">
+      <div class="tier-icon">🥇</div>
+      <h4>Gold Tier</h4>
+      <p>Your current status. Earn 10 points per $1 spent. Free late checkout and welcome amenity.</p>
+      <span class="badge-tier">YOUR TIER</span>
+    </div>
+    <div class="loyalty-card">
+      <div class="tier-icon">💎</div>
+      <h4>Platinum Tier</h4>
+      <p>Next milestone: 10 nights. Unlock room upgrades, executive lounge access, and priority check-in.</p>
+      <span class="badge-tier" style="background:transparent;color:var(--gold);border:1px solid rgba(212,168,67,0.3)">5 NIGHTS TO GO</span>
+    </div>
+    <div class="loyalty-card">
+      <div class="tier-icon">👑</div>
+      <h4>Presidential Tier</h4>
+      <p>25 nights. Personal concierge, airport transfers, complimentary suites, and exclusive events.</p>
+      <span class="badge-tier" style="background:transparent;color:var(--gold);border:1px solid rgba(212,168,67,0.3)">20 NIGHTS TO GO</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ FEEDBACK ═══ -->
+<section id="feedback">
+<div class="feedback-inner">
+  <span class="label">Your Voice Matters</span>
+  <h2>How was your <em>experience</em>?</h2>
+  <p class="sub">A 10-second rating helps us make your next stay even better. (And yes, we read every response.)</p>
+  <div class="rating-group" id="ratings">
+    <button onclick="selectRating(this,1)" title="Needs improvement">😞</button>
+    <button onclick="selectRating(this,2)" title="Okay">😐</button>
+    <button onclick="selectRating(this,3)" title="Good">🙂</button>
+    <button onclick="selectRating(this,4)" title="Great">😊</button>
+    <button onclick="selectRating(this,5)" title="Excellent">🤩</button>
+  </div>
+  <button class="feedback-btn" onclick="submitFeedback()">Send Feedback</button>
+  <p style="font-size:12px;color:var(--text-muted);margin-top:12px">No sign-in needed. Your response is anonymous.</p>
+</div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-links">
+    <a href="#">My Account</a>
+    <a href="#">Manage Booking</a>
+    <a href="#">Loyalty Program</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Unsubscribe</a>
+  </div>
+  NovaStar Hotels · 215 Market Street, San Francisco, CA 94105 · © 2026 All rights reserved.<br>
+  This message was sent to alex.m@email.com because you're a valued NovaStar guest.
+</footer>
+
+<script>
+function selectRating(el, val){
+  document.querySelectorAll('#ratings button').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function submitFeedback(){
+  const selected = document.querySelector('#ratings .selected');
+  if(!selected){
+    alert('Please select a rating first.');
+    return;
+  }
+  const emoji = selected.textContent;
+  const labels = { '😞':'Needs improvement', '😐':'Okay', '🙂':'Good', '😊':'Great', '🤩':'Excellent' };
+  alert('Thank you, Alex! You rated your experience as "' + (labels[emoji] || emoji) + '".\n\nYour feedback helps us make every stay better. We\'ll see you soon.');
+}
+</script>
+
+</body>
+</html>
